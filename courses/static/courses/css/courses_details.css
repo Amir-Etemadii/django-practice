@@ -10,3 +10,8 @@ hr{
     border: 2px solid red;
     /* width: 550px; */
 }
+
+img{
+    width: 650px;
+    height: 350px;
+}

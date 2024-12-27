@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'home/index.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/index.css' %}">
 </head>
 <body>
-
+<img src="{% static 'img/logo.jpg' %}" alt="" style="width: 100px;height: 100px;text-align: center">
     <div class="container">
         <h1 class="mt-3" id="header">Home Page</h1>
         <div class="dropdown" style="text-align: right;">
@@ -28,12 +28,10 @@
 
 
         <div class="d-grid gap-2">
-            <button type="button" class="btn btn-outline-primary">Primary</button>
-            <button type="button" class="btn btn-outline-secondary">Secondary</button>
-            <button type="button" class="btn btn-outline-success">Success</button>
-            <button type="button" class="btn btn-outline-danger">Danger</button>
-            <button type="button" class="btn btn-outline-warning">Warning</button>
-            <button type="button" class="btn btn-outline-info">Info</button>
+            <a href="{% url 'courses:list' %}" class="btn btn-outline-primary">course-list</a>
+            <a href="{% url 'courses:add' %}" class="btn btn-outline-success">course-add</a>
+            <a href="" class="btn btn-outline-secondary">user-list</a>
+
         </div>
     </div>
 

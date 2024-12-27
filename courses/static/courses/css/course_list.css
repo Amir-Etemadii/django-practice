@@ -1,0 +1,29 @@
+
+
+#header{
+    text-align: center;
+}
+
+hr{
+
+    text-align: center;
+    border: 2px solid red;
+    /* width: 550px; */
+}
+
+a{
+    text-decoration: none;
+}
+
+a:visited{
+    color: green;
+}
+a:link{
+    color: red;
+}
+
+a:hover{
+    color: blue;
+    text-decoration: underline;
+    text-decoration-color: blueviolet;
+}
