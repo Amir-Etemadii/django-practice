@@ -13,14 +13,21 @@
     <div class="container">
         <h1 class="mt-3" id="header">Home Page</h1>
         <div class="dropdown" style="text-align: right;">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </button>
-            <ul class="dropdown-menu">
-              <li><button class="dropdown-item" type="button">Action</button></li>
-              <li><button class="dropdown-item" type="button">Another action</button></li>
-              <li><button class="dropdown-item" type="button">Something else here</button></li>
-            </ul>
+            {% if request.user.is_authenticated %}
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  {{ request.user.username }}
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="{% url 'account:user_logout' %}" class="dropdown-item" >Logout</a></li></ul>
+            {% else %}
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  login or register
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="{% url 'account:user_login' %}" class="dropdown-item" >Login</a></li>
+                  <li><a href="{% url 'account:user_register' %}" class="dropdown-item" >Register</a></li></ul>
+              {% endif %}
+
           </div>
         <hr class="mb-5">
 
@@ -30,7 +37,9 @@
         <div class="d-grid gap-2">
             <a href="{% url 'courses:list' %}" class="btn btn-outline-primary">course-list</a>
             <a href="{% url 'courses:add' %}" class="btn btn-outline-success">course-add</a>
-            <a href="" class="btn btn-outline-secondary">user-list</a>
+            <a href="{% url 'account:user_list' %}" class="btn btn-outline-secondary">user-list</a>
+{#            <a href="" class="btn btn-outline-danger">user-list</a>#}
+{#            <a href="" class="btn btn-outline-warning">user-list</a>#}
 
         </div>
     </div>
